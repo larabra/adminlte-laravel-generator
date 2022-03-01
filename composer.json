@@ -1,8 +1,9 @@
 {
-    "name": "infyomlabs/adminlte-templates",
+    "name": "larabra/adminlte-laravel-generator",
     "type": "library",
-    "description": "AdminLTE templates for InfyOm Laravel Generator",
+    "description": "AdminLTE templates for Larabra Laravel Generator",
     "keywords": [
+        "larabra",
         "infyom",
         "laravel",
         "generator",
@@ -15,31 +16,26 @@
         {
             "name": "Mitul Golakiya",
             "email": "me@mitul.me"
+        },
+        {
+            "name": "Ennio Sousa",
+            "email": "ennio@enniosousa.com.br"
         }
     ],
     "require": {
-        "php": "^8.0",
-        "illuminate/support": "^9.0",
-        "infyomlabs/laravel-ui-adminlte": "^4.0"
+        "php": ">=7.2.5|^8.0",
+        "illuminate/support": "^6.0|^7.0|^8.0"
     },
     "autoload": {
         "psr-4": {
-            "InfyOm\\AdminLTETemplates\\": "src/"
+            "Larabra\\AdminLteLaravelGenerator\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "\\InfyOm\\AdminLTETemplates\\AdminLTETemplatesServiceProvider"
+                "\\Larabra\\AdminLteLaravelGenerator\\AdminLteLaravelGeneratorServiceProvider"
             ]
         }
-    },
-    "funding": [
-        {
-            "type": "opencollective",
-            "url": "https://opencollective.com/infyomlabs"
-        }
-    ],
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    }
 }

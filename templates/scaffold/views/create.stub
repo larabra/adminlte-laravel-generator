@@ -13,11 +13,11 @@
 
     <div class="content px-3">
 
-        @include('adminlte-templates::common.errors')
+        @include('adminlte-laravel-generator::common.errors')
 
         <div class="card">
 
-            {!! Form::open(['route' => '$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.store'$FILES$]) !!}
+            {!! Form::open(['id'=>'crud-form', 'route' => '$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.store'$FILES$]) !!}
 
             <div class="card-body">
 
@@ -33,6 +33,8 @@
             </div>
 
             {!! Form::close() !!}
+            
+            $JS_VALIDATOR_SCRIPT$
 
         </div>
     </div>

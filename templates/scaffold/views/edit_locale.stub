@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('page_title', trans('crud.edit') . ' '. trans('models/$MODEL_NAME_PLURAL_CAMEL$.singular'))
+
 @section('content')
     <section class="content-header">
         <div class="container-fluid">
@@ -13,11 +15,11 @@
 
     <div class="content px-3">
 
-        @include('adminlte-templates::common.errors')
+        @include('adminlte-laravel-generator::common.errors')
 
-        <div class="card">
+        <div class="card card-primary card-outline">
 
-            {!! Form::model($$MODEL_NAME_CAMEL$, ['route' => ['$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.update', $$MODEL_NAME_CAMEL$->$PRIMARY_KEY_NAME$], 'method' => 'patch'$FILES$]) !!}
+            {!! Form::model($$MODEL_NAME_CAMEL$, ['id'=>'crud-form', 'route' => ['$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.update', $$MODEL_NAME_CAMEL$->$PRIMARY_KEY_NAME$], 'method' => 'patch'$FILES$]) !!}
 
             <div class="card-body">
                 <div class="row">
@@ -26,13 +28,15 @@
             </div>
 
             <div class="card-footer">
-                {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
+                {!! Form::submit(trans('crud.save'), ['class' => 'btn btn-primary']) !!}
                 <a href="{{ route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index') }}" class="btn btn-default">
                     @lang('crud.cancel')
                  </a>
             </div>
 
             {!! Form::close() !!}
+
+            $JS_VALIDATOR_SCRIPT$
 
         </div>
     </div>
